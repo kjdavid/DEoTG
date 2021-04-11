@@ -3,6 +3,7 @@ package model;
 import java.util.*;
 
 public class Game {
+
     private int numOfAgents;
     private int size;
     private GameGraph graph;

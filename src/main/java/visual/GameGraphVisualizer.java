@@ -30,8 +30,8 @@ public class GameGraphVisualizer extends JPanel {
     public View view;
     public boolean moveView;
     public Point moveLastPos;
-    public final int width = 1600;
-    public final int height = 720;
+    public final int width = 800;
+    public final int height = 640;
 
     public GameGraphVisualizer() {
 
@@ -129,17 +129,11 @@ class ViewMouseListener implements MouseListener, MouseWheelListener {
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
     public void mousePressed(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON2) {
             parent.moveLastPos = MouseInfo.getPointerInfo().getLocation();
             parent.moveView = true;
         }
-        ;
     }
 
     @Override
@@ -147,24 +141,20 @@ class ViewMouseListener implements MouseListener, MouseWheelListener {
         if (e.getButton() == MouseEvent.BUTTON2) {
             parent.moveView = false;
         }
-        ;
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
     }
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
-
-
         parent.view.zoom = Math.max(0.01f, parent.view.zoom + e.getWheelRotation() / -50.0f);
         parent.repaint();
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {}
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
 }

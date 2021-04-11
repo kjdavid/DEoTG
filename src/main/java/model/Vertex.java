@@ -37,7 +37,7 @@ public class Vertex implements Cloneable {
     }
 
     public void addEdge(Edge edge) {
-        this.edges.add(new Pair(edge, null));
+        this.edges.add(new Pair<>(edge, null));
     }
 
     public void wakeUpAgents(){//This only should call in semi sync case

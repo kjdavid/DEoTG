@@ -35,7 +35,7 @@ public class GameGraph implements Cloneable {
         for (int i = 0; i < bonusEdgesCount; i++) {
             v1 = rand.nextInt(verticesWithoutMaxDegree.size());
             v2 = rand.nextInt(verticesWithoutMaxDegree.size());
-            while (v1 == v2 || edges.contains(new Edge(verticesWithoutMaxDegree.get(v1 < v2 ? v1 : v2), verticesWithoutMaxDegree.get(v2 < v1 ? v1 : v2)))) {
+            while (v1 == v2 || edges.contains(new Edge(verticesWithoutMaxDegree.get(Math.min(v1, v2)), verticesWithoutMaxDegree.get(Math.max(v2, v1))))) {
                 v1 = rand.nextInt(verticesWithoutMaxDegree.size());
                 v2 = rand.nextInt(verticesWithoutMaxDegree.size());
             }
@@ -109,7 +109,7 @@ public class GameGraph implements Cloneable {
         GameGraph graph = new GameGraph(vertices.size(), connectivity);
         ArrayList<Vertex> vs = new ArrayList<>();
         for (Vertex v : vertices) {
-            //vs.add((Vertex) v.clone());//FIXME in Vertex class!
+            //vs.add((Vertex) v.clone()); //FIXME in Vertex class!
         }
         graph.vertices = vs;
         graph.edges = new ArrayList<>();

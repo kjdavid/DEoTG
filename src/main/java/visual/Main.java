@@ -69,11 +69,6 @@ public class Main extends JFrame {
             int t = 0;
 
             @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
             public void keyPressed(KeyEvent e) {//TODO: make states to turns
                 if (e.getKeyCode() == KeyEvent.VK_E) {
                     game.getGraph().setEdgesToTurnT(++t);
@@ -98,9 +93,11 @@ public class Main extends JFrame {
             }
 
             @Override
-            public void keyReleased(KeyEvent e) {
+            public void keyTyped(KeyEvent e) {}
 
-            }
+            @Override
+            public void keyReleased(KeyEvent e) {}
+
         });
     }
 
