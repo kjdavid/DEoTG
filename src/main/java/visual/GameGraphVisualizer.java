@@ -60,7 +60,7 @@ public class GameGraphVisualizer extends JPanel {
 
         Map<Vertex, VisGameVertex> vTemp = new HashMap<>();
 
-        List<Vertex> vertices = graph.vertices;//.stream().sorted(Comparator.comparingInt(v -> -v.edges.size())).collect(Collectors.toList());
+        List<Vertex> vertices = graph.vertices;
 
         double angStep = (Math.PI * 2) / vertices.size();
         double radius = 30 * vertices.size();

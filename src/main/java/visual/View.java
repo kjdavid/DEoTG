@@ -19,5 +19,4 @@ public class View {
     public int transform(int v) {
         return (int) (v * zoom);
     }
-//public float zoom;
 }

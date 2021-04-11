@@ -88,17 +88,4 @@ public class Vertex implements Cloneable {
         return Objects.hash(id);
     }
 
-//    @Override //TODO: Norbi will handle this.
-//    public Object clone(){
-//        LinkedList<Token> clonedTokens = new LinkedList<>();
-//        for(Token token : tokens){
-//            if(token==Token.COP){
-//                clonedTokens.add(Token.COP);
-//            }else{
-//                clonedTokens.add(Token.ROBBER);
-//            }
-//        }
-//        Vertex vertex = new Vertex(this.id,clonedTokens );
-//        return vertex;
-//    }
 }

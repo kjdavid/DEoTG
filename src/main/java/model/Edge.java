@@ -2,13 +2,15 @@ package model;
 
 public class Edge implements Cloneable {
     private boolean active;
+    private boolean trans;
     public Vertex v1;
     public Vertex v2;
 
-    public Edge(Vertex v1, Vertex v2) {
+    public Edge(Vertex v1, Vertex v2, boolean trans) {
         this.active = true;
         this.v1 = v1;
         this.v2 = v2;
+        this.trans=trans;
     }
 
     public boolean isActive() {
@@ -35,5 +37,9 @@ public class Edge implements Cloneable {
         int result = v1.hashCode();
         result = 31 * result + v2.hashCode();
         return result;
+    }
+
+    public boolean isTrans() {
+        return trans;
     }
 }

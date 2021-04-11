@@ -48,9 +48,9 @@ public class VisGameVertex {
                 g.setStroke(new BasicStroke(2.0f));
                 g.drawOval(p.x - start + i * size / 4, p.y, size / 4, size / 4);
             } else {
-                g.setColor(new Color(200, 200, 200));
+                g.setColor(new Color(200, 0, 0));
                 g.fillOval(p.x - start + i * size / 4, p.y, size / 4, size / 4);
-                g.setColor(new Color(100, 100, 100));
+                g.setColor(new Color(100, 0, 0));
                 g.setStroke(new BasicStroke(2.0f));
                 g.drawOval(p.x - start + i * size / 4, p.y, size / 4, size / 4);
 

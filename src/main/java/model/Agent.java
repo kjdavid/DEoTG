@@ -3,7 +3,7 @@ package model;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Agent { //TODO: implement cloneable
+public class Agent {
     private int id;
 
     private long waiting;
@@ -65,7 +65,6 @@ public class Agent { //TODO: implement cloneable
                     v.setPointerV(i + 1);
                     v.getEdges().get(i).setValue(this);
                     atPort = true;
-                    System.out.println("gonna go to: " + (!v.getEdges().get(i).getKey().v1.equals(v) ? v.getEdges().get(i).getKey().v1.getId() : v.getEdges().get(i).getKey().v2.getId()) + " vertex, " + getId() + " agent");
                 }
             }
         }

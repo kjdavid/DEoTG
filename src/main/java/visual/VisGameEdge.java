@@ -24,8 +24,14 @@ public class VisGameEdge {
         Point end = view.transform(this.end.x, this.end.y);
 
         Graphics2D g = (Graphics2D) g1;
-        g.setStroke(new BasicStroke(3.0f * view.zoom));
-        g.setColor(edge.isActive() ? new Color(200, 200, 200) : new Color(70, 50, 50));
+        g.setStroke(new BasicStroke(4.0f * view.zoom));
+        if(edge.isActive()){
+            g.setColor(new Color(200, 200, 200));
+        }else if( !edge.isTrans()) {
+            g.setColor(new Color(250, 50, 50));
+        }else{
+            g.setColor(new Color(50, 250, 50));
+        }
 
         g.drawLine(start.x, start.y, end.x, end.y);
 
