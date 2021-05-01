@@ -9,11 +9,28 @@ public class Vertex implements Cloneable {
     private HashSet<Agent> agents;
     private LinkedList<Pair<Edge,Agent>> edges; //Technically this is the whiteboard.
     private int pointerV;
+    private int counter;
+    private int lastTurnVisited;
     public Vertex(int id, HashSet<Agent> agents) {
         this.id = id;
         this.agents = agents;
         this.edges = new LinkedList<>();
         this.pointerV=0;
+        this.counter = 0;
+        this.lastTurnVisited = 0;
+    }
+
+    public void incCounter(int t){
+        this.counter++;
+        this.lastTurnVisited = t;
+    }
+
+    public int getCounter(){
+        return this.counter;
+    }
+
+    public int getLastTurnVisited(){
+        return lastTurnVisited;
     }
 
     public int getPointerV() {

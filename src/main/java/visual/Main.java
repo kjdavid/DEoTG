@@ -1,9 +1,6 @@
 package visual;
 
-import model.Connectivity;
-import model.GameGraph;
-import model.Game;
-import model.Sync;
+import model.*;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -15,6 +12,8 @@ public class Main extends JFrame {
     private static boolean found;
     public Game game;
     public GameGraphVisualizer canvas;
+
+    public static int turn;
 
     public Main(String[] args) throws Exception {
         if (args.length == 0) {
@@ -74,6 +73,16 @@ public class Main extends JFrame {
                     });
                     game.getGraph().vertices.forEach((v) -> v.sendAgents(t));
                     canvas.setGraph(game.getGraph());
+
+                    Main.turn = t;
+                    int min = Integer.MAX_VALUE;
+                    for(Vertex v : game.getGraph().vertices){
+                        if(min > v.getCounter()){
+                            min = v.getCounter();
+                        }
+                    }
+                    System.out.println("Number of turns: " + t + " - The graph has been explored " + min + " times");
+
                     System.out.println();
 
                 }

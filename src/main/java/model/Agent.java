@@ -54,16 +54,18 @@ public class Agent {
         }
         if (!atPort) {
             Vertex v = notes.getLast().getValue();
-            int i = v.getPointerV() - 1;
-            do {
-                i = (i + 1) % v.getEdges().size();
-            } while (v.getEdges().get(i).getValue() != null && i != v.getPointerV() - 1);
+            int p = v.getPointerV();
+            int i = 0;
+            while (v.getEdges().size() > i && v.getEdges().get(p).getValue() != null) {
+                p = (p + 1) % v.getEdges().size();
+                i++;
+            }
 
 
             if (new Random(t + id).nextInt() % 2 == 0) {
-                if (i != v.getPointerV() - 1) {
-                    v.setPointerV(i + 1);
-                    v.getEdges().get(i).setValue(this);
+                if(i < v.getEdges().size()){
+                    v.setPointerV((p + 1) % v.getEdges().size());
+                    v.getEdges().get(p).setValue(this);
                     atPort = true;
                 }
             }
@@ -74,6 +76,7 @@ public class Agent {
         notes.add(new Pair<>(t, v));
         waited = 0;
         atPort = false;
+        v.incCounter(t);
     }
 
     public int getId() {

@@ -22,11 +22,7 @@ public class Game {
                 this.numOfAgents = 2*l+1;
             }
         }else{
-            if(sync==Sync.FULL_SYNC){
-                this.numOfAgents = 2*l;
-            }else{
-                this.numOfAgents = 2*l+1;
-            }
+            this.numOfAgents = 2*l+1;
         }
         this.size = size;
         this.l = l;
