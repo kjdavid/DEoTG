@@ -17,7 +17,7 @@ public class Main extends JFrame {
 
     public Main(String[] args) throws Exception {
         if (args.length == 0) {
-            game = new Game(Connectivity.TEMPORAL_CONNECTIVITY, Sync.FULL_SYNC, 10, 3);
+            game = new Game(Connectivity.TEMPORAL_CONNECTIVITY, Sync.FULL_SYNC, 15, 1);
         } else {
             game = new Game(Connectivity.values()[Integer.parseInt(args[0])],Sync.values()[Integer.parseInt(args[1])],Integer.parseInt(args[2]),Integer.parseInt(args[3]));
         }

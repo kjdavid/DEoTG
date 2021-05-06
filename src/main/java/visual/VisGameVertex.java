@@ -33,8 +33,8 @@ public class VisGameVertex {
 
         g.setColor(new Color(80, 80, 80));
         g.fillOval(p.x - size / 2, p.y - size / 2, size, size);
-        int c = (Main.turn - vertex.getLastTurnVisited()) > 200 ? 200 : (Main.turn - vertex.getLastTurnVisited());
-        g.setColor(new Color(200 - c, 200, 255));
+        int c = (Main.turn - vertex.getLastTurnVisited())*2 > 200 ? 200 : (Main.turn - vertex.getLastTurnVisited())*2;
+        g.setColor(new Color(200 - c, 255-c, 255-c));
         g.setStroke(new BasicStroke(2.0f));
         g.drawOval(p.x - size / 2, p.y - size / 2, size, size);
 
